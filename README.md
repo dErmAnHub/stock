@@ -14,11 +14,11 @@
 ## products
 |Column       |Type      |Options   |
 |-------------|----------|----------|
-|name         |string    |null:false, unique:true|      製品名
-|quantity     |integer   |null:false|                   在庫数
-|low_quantity |integer   |null:false|　                 在庫切れ通知個数
-|last_time    |integer   |　                            前回のリストックされるまでの期間
-|last_quantity|integer   |                              前回のリストックされるまでに出荷した在庫数
+|name         |string    |null:false, unique:true|
+|quantity     |integer   |null:false|
+|low_quantity |integer   |null:false|
+|last_time    |integer   |          |　
+|last_quantity|integer   |          |
 |user_id      |references|null: false,foreign_key:true|
 
 ### Association
@@ -28,8 +28,8 @@
 ## notification
 |Column    |Type      |Options    |
 |----------|----------|-----------|
-|type      |string    |null:false |                     通知の種類
-|checked   |integer   |null:false |                     通知確認
+|type      |string    |null:false |
+|checked   |integer   |null:false |
 |product_id|references|null: false,foreign_key:true|
 
 ### Association
