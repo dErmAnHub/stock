@@ -1,0 +1,12 @@
+%h1 在庫登録
+
+-# = form_with(model: @product, url: products_path) do
+= form_for @product, url: {action: 'create'} do |f|
+  %div
+    = f.text_field :name
+  %div
+    = f.number_field :quantity, type: "number", min: "1", max: "9999999", required: true
+  %div
+    = f.number_field :low_quantity, type: "number", min: "1", max: "9999999", required: true
+  %div
+    = f.submit '登録する'
