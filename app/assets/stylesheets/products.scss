@@ -1,0 +1,42 @@
+.header {
+  position: relative;
+  background-color: darkcyan;
+  height: 100px;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  &__top {
+    &__logo {
+      margin: 10px 15px;
+      font-size: 30px;
+      color: #fff;
+      text-shadow: 1px 2px 3px black;
+      font-weight: 600;
+    }
+  }
+  &__bottom {
+    position: absolute;
+    bottom: 2px;
+    padding: 5px 5px 5px 15px;
+    display: flex;
+    &__link-style {
+      height: 30px;
+      position: relative;
+      color: black;
+      margin-right: 20px;
+      &__icon {
+        margin-right: 10px;
+      }
+      .icon-position {
+        // padding-top: 4px;
+      }
+      span {
+        font-size: 15px;
+        color: #fff;
+        text-shadow: 1px 2px 3px black;
+        font-weight: 400;
+      }
+    }
+  }
+}

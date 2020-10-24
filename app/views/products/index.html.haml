@@ -1,15 +1,20 @@
-= link_to '在庫登録', new_product_path
-
-- @product.each_with_index do |product, i|
-  %div
-    %div
-      = i + 1
-  %div
-    %div
-      = product.name
-  %div
-    %div
-      = product.quantity
-  %div
-    %div
-      = product.low_quantity
+= render partial: 'header'
+.index
+  .index__main
+    .index__main__title 在庫一覧
+    %table.table-style
+      %tr
+        %th
+        %th 製品名
+        %th 個数
+        %th 在庫切れ通知個数
+      - @product.each_with_index do |product, i|
+        %tr
+          %td
+            = i + 1
+          %td
+            = product.name
+          %td
+            = product.quantity
+          %td
+            = product.low_quantity

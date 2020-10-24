@@ -1,12 +1,20 @@
-%h1 在庫登録
-= link_to 'TOP', root_path
+= render partial: 'header'
 
-= form_with(model: @product, url: products_path, local: true) do |f|
-  %div
-    = f.text_field :name
-  %div
-    = f.number_field :quantity, type: "number", min: "1", max: "9999999", required: true
-  %div
-    = f.number_field :low_quantity, type: "number", min: "1", max: "9999999", required: true
-  %div
-    = f.submit '登録する'
+.new
+  .new__main
+    .new__main__title 在庫登録
+    = form_with(model: @product, url: products_path, local: true) do |f|
+      .form-wrapper
+        .form-name 製品名
+        %div
+          = f.text_field :name, class: "input-form"
+      .form-wrapper
+        .form-name 個数
+        %div
+          = f.number_field :quantity, type: "number", min: "1", max: "9999999", class: "input-form", required: true
+      .form-wrapper
+        .form-name 在庫切れ通知個数
+        %div
+          = f.number_field :low_quantity, type: "number", min: "1", max: "9999999", class: "input-form", required: true
+      .btn-wrapper
+        = f.submit '登録する'
