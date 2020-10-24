@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @product = Product.order ('created_at DESC')
   end
 
   def new
@@ -9,7 +10,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to new_product_path
+      redirect_to root_path
     else
       render :new
     end

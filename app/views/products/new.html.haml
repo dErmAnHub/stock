@@ -1,6 +1,7 @@
 %h1 在庫登録
+= link_to 'TOP', root_path
 
-= form_with(model: @product, url: products_path) do |f|
+= form_with(model: @product, url: products_path, local: true) do |f|
   %div
     = f.text_field :name
   %div
