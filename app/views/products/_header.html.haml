@@ -1,0 +1,12 @@
+.header
+  .header__top
+    .header__top__logo Stock
+  .header__bottom
+    = link_to root_path, class: "header__bottom__link-style" do
+      = icon('fas', 'boxes', class: "header__bottom__link-style__icon")
+      %span 在庫一覧
+
+    = link_to new_product_path, class: "header__bottom__link-style" do
+      = icon('fas', 'box-open', class: "header__bottom__link-style__icon icon-position")
+      %span 在庫登録
+    
