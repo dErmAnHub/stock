@@ -2,19 +2,21 @@
 .index
   .index__main
     .index__main__title 在庫一覧
-    %table.table-style
-      %tr
-        %th
-        %th 製品名
-        %th 個数
-        %th 在庫切れ通知個数
-      - @product.each_with_index do |product, i|
+    %table
+      %thead
         %tr
-          %td
-            = i + 1
-          %td
-            = product.name
-          %td
-            = product.quantity
-          %td
-            = product.low_quantity
+          %th
+          %th 製品名
+          %th 個数
+          %th 在庫切れ通知個数
+      %tbody
+        - @product.each_with_index do |product, i|
+          %tr
+            %td
+              = i + 1
+            %td
+              = product.name
+            %td
+              = product.quantity
+            %td
+              = product.low_quantity
