@@ -3,9 +3,8 @@
   background-color: darkcyan;
   height: 100px;
   width: 100%;
+  position: fixed;
   z-index: 1;
-  position: absolute;
-  top: 0;
   &__top {
     &__logo {
       margin: 10px 15px;
@@ -27,9 +26,6 @@
       margin-right: 20px;
       &__icon {
         margin-right: 10px;
-      }
-      .icon-position {
-        // padding-top: 4px;
       }
       span {
         font-size: 15px;
