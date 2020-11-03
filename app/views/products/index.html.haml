@@ -2,21 +2,20 @@
 .index
   .index__main
     .index__main__title 在庫一覧
-    %table
-      %thead
-        %tr
-          %th
-          %th 製品名
-          %th 個数
-          %th 在庫切れ通知個数
-      %tbody
-        - @product.each_with_index do |product, i|
-          %tr
-            %td
-              = i + 1
-            %td
-              = product.name
-            %td
-              = product.quantity
-            %td
-              = product.low_quantity
+    %ul.index__main__list
+      - @product.each_with_index do |product|
+        %li{class: "index__main__list__content", data: {id: product.id}}
+          %div
+            = product.name
+          %div
+            %span.data-wrapper
+              %span
+                数量：
+              %span
+                = product.quantity
+            %span.data-wrapper
+              %span
+                更新日:
+              %span
+                = product.updated_at.to_date
+          
