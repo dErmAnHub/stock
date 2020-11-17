@@ -40,6 +40,7 @@ $(function(){
     }
   );
 
+// 削除確認モーダルの表示・動作
   $(document).on('click', '#modal-open-btn', function(e){
     $('#overlay').fadeIn();
     $(document).on('click','#modal-close-btn', function(){
